@@ -1,12 +1,14 @@
 # BP
 
-本项目为求解经典的基追踪问题：
+本项目使用 matlab 语言，为求解经典的基追踪问题：
+
 $$
  \begin{aligned} 
  \min_{x \in \mathbb{R}^n} \quad  & \|  x  \|_1  \\
   \text{s.t.} \quad & Ax = b \\
    \end{aligned} 
 $$
+
 提供了多种求解方式：
 - **CVX + Gurobi**：`bp_cvx_gurobi.m`
 - **CVX + Mosek**：`bp_cvx_mosek.m`
