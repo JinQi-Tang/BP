@@ -65,7 +65,10 @@ log.info(repelem('=', 50));
 log.info("开始加载数据集...");
 
 % 2. 加载数据
-data_path = "../data/m200_n1000_k30_210545/data_setup.mat";
+yaml_content = fileread('../config.yaml');
+py_data = py.yaml.safe_load(yaml_content);
+data_path = fullfile("../", char(py_data.get('data_path')));
+
 if exist(data_path, 'file')
     load(data_path);
     log.info(sprintf("数据集加载完成: %s", data_path));

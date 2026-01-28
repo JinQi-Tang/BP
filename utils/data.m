@@ -1,4 +1,4 @@
-function [A, b, x_true] = generate_bp_data_with_save(m, n, k)
+function generate_bp_data_with_save(m, n, k)
     % GENERATE_BP_DATA_WITH_SAVE 生成基追踪数据并自动保存
     % 文件夹命名格式示例：Project_Data_20260128/120530_m300_n1000_k30
     arguments
@@ -61,3 +61,7 @@ function [A, b, x_true] = generate_bp_data_with_save(m, n, k)
     fprintf('包含文件: data_setup.mat, original_signal.png, measurements.png\n');
     fprintf('--------------------\n');
 end
+
+yaml_content = fileread('../config.yaml');
+py_data = py.yaml.safe_load(yaml_content);
+generate_bp_data_with_save(py_data.get('m', 200), py_data.get('n', 1000), py_data.get('k', 30))

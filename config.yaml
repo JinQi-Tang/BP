@@ -1,0 +1,4 @@
+m: 300
+n: 1000
+k: 30
+data_path: "data/m300_n1000_k30_******/data_setup.mat"
