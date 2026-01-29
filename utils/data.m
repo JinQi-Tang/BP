@@ -27,7 +27,7 @@ function generate_bp_data_with_save(m, n, k)
     
     % 2.2 创建含参数的子文件夹 (例如 120530_m300_n1000_k30)
     timeStr = string(currentTime, 'HHmmss');
-    subFolderName = sprintf('m%d_n%d_k%d_%s', m, n, k, char(timeStr));
+    subFolderName = sprintf('%s_m%d_n%d_k%d', char(timeStr), m, n, k);
     savePath = fullfile(mainFolderName, subFolderName);
     mkdir(savePath);
 
@@ -61,7 +61,6 @@ function generate_bp_data_with_save(m, n, k)
     fprintf('包含文件: data_setup.mat, original_signal.png, measurements.png\n');
     fprintf('--------------------\n');
 end
-
 yaml_content = fileread('../config.yaml');
 py_data = py.yaml.safe_load(yaml_content);
 generate_bp_data_with_save(py_data.get('m', 200), py_data.get('n', 1000), py_data.get('k', 30))

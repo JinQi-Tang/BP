@@ -1,4 +1,5 @@
 m: 200
 n: 1000
 k: 30
-data_path: "data/m200_n1000_k30_******/data_setup.mat"
+data_path: "data/m200_n1000_k30/data_setup.mat"
+method: "cvx_mosek"

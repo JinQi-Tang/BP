@@ -130,7 +130,7 @@ classdef Logger < handle
                 obj.error(sprintf('图片保存失败: %s', ME.message));
             end
         end
-        
+
         function saveData(obj, data, filename)
             if nargin < 3
                 filename = sprintf('data_%s.mat', string(datetime('now'), 'HHmmss'));
